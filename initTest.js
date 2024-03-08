@@ -259,88 +259,28 @@ describe('InitTest', function () {
   })
   it('TC00000014', async function() {
 
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title1")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title2")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
+    vars["check"] = await driver.executeScript("return 1")
+    const timesCreate = 7
+    for(let i = 0; i < timesCreate; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(3000);
+      await driver.findElement(By.css(".bi-pencil-fill")).click()
+      await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
+      await driver.findElement(By.id("exampleModalLabel")).click()
+      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop title" + vars["check"])
+      await driver.findElement(By.id("addDate")).click()
+      await driver.findElement(By.id("addDate")).sendKeys("002024-03-09")
+      await driver.findElement(By.id("modalSaveBtn")).click()
+      await driver.sleep(3000);
+      vars["check"] = await driver.executeScript("return arguments[0] + 1", vars["check"])
+    }
 
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title3")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title4")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title5")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title6")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title7")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
+    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
+    {
+      const elements = await driver.findElements(By.css(".card-body"))
+      assert(elements.length)
+    }
+
     await driver.navigate().refresh();
     await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
@@ -365,136 +305,37 @@ describe('InitTest', function () {
       assert.fail('스크롤바가 존재합니다.');
     }
 
-
-
-
     console.log("scroll 유무 확인하는 command를 IDE 미지원하여 mocha.js로 작성")
+
+
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.sleep(2000);
-    await driver.findElement(By.name("deleteBtn")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(2000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(2000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(2000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(2000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(2000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(2000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 7
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.findElement(By.name("deleteBtn")).click()
+      assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
+      await driver.switchTo().alert().accept()
+    }
+
+
   })
   it('TC00000015', async function() {
 
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title1")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title2")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title3")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title4")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title5")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title6")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title7")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.sleep(2000);
-    // // todo 생성
-    console.log("todo 생성")
-    await driver.findElement(By.css(".bi-pencil-fill")).click()
-    // 모달 나타날때까지 기다림
-    await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
-    await driver.findElement(By.id("exampleModalLabel")).click()
-    await driver.findElement(By.id("exampleModalLabel")).sendKeys("test title8")
-    await driver.findElement(By.id("addDate")).click()
-    await driver.findElement(By.id("addDate")).sendKeys("002024-03-04")
-    await driver.sleep(2000);
-    await driver.findElement(By.id("modalSaveBtn")).click()
+    vars["check"] = await driver.executeScript("return 1")
+    const timesCreate = 8
+    for(let i = 0; i < timesCreate; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(3000);
+      await driver.findElement(By.css(".bi-pencil-fill")).click()
+      // 모달 나타날때까지 기다림
+      await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
+      await driver.findElement(By.id("exampleModalLabel")).click()
+      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop title" + vars["check"])
+      await driver.findElement(By.id("addDate")).click()
+      await driver.findElement(By.id("addDate")).sendKeys("002024-03-09")
+      await driver.findElement(By.id("modalSaveBtn")).click()
+      vars["check"] = await driver.executeScript("return arguments[0] + 1", vars["check"])
+    }
 
     await driver.navigate().refresh();
     await driver.sleep(3000);
@@ -519,39 +360,17 @@ describe('InitTest', function () {
       assert.fail('스크롤바가 미존재합니다.');
     }
     console.log("scroll 유무 확인하는 command를 IDE 미지원하여 mocha.js로 작성")
+
+
     // // 삭제
-    console.log("삭제")
-    await driver.sleep(1000);
-    await driver.findElement(By.name("deleteBtn")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(1000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(1000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(1000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(1000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(1000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(1000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
-    await driver.sleep(1000);
-    await driver.findElement(By.css(".card:nth-child(1) .btn-danger > .bi")).click()
-    assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
-    await driver.switchTo().alert().accept()
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 8
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(1000);
+      await driver.findElement(By.name("deleteBtn")).click()
+      assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
+      await driver.switchTo().alert().accept()
+    }
   })
 })
