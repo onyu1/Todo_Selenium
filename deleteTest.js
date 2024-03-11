@@ -40,7 +40,6 @@ describe('DeleteTest', function() {
 //     await driver.quit();
 //   })
   it('TC00000055', async function() {
-    await driver.get("http://todo.wooyu.world/")
     vars["check"] = await driver.executeScript("return 1")
     const times = 1
     for(let i = 0; i < times; i++) {
@@ -48,31 +47,31 @@ describe('DeleteTest', function() {
       // 모달 나타날때까지 기다림
       await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
       await driver.findElement(By.id("exampleModalLabel")).click()
-      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop titlevars["check"]")
+      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop title" + vars["check"])
       await driver.findElement(By.id("addDate")).click()
       await driver.findElement(By.id("addDate")).sendKeys("002024-03-09")
       await driver.findElement(By.id("modalSaveBtn")).click()
       vars["check"] = await driver.executeScript("return arguments[0] + 1", vars["check"])
     }
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
     assert(await driver.findElement(By.css(".dropdown-toggle")).getText() == "대기중")
+
     // // 삭제하기
     console.log("삭제하기")
     await driver.findElement(By.name("deleteBtn")).click()
     assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
     await driver.switchTo().alert().accept()
-    await driver.get("http://todo.wooyu.world/")
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(!elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    // 리스트 미존재하는지
+    const elements = await driver.findElements(By.css(".card-body"))
+    assert(!elements.length)
   })
   it('TC00000056', async function() {
-    await driver.get("http://todo.wooyu.world/")
     vars["check"] = await driver.executeScript("return 1")
     const times = 1
     for(let i = 0; i < times; i++) {
@@ -80,28 +79,30 @@ describe('DeleteTest', function() {
       // 모달 나타날때까지 기다림
       await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
       await driver.findElement(By.id("exampleModalLabel")).click()
-      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop titlevars["check"]")
+      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop title" + vars["check"])
       await driver.findElement(By.id("addDate")).click()
       await driver.findElement(By.id("addDate")).sendKeys("002024-03-09")
       await driver.findElement(By.id("modalSaveBtn")).click()
       vars["check"] = await driver.executeScript("return arguments[0] + 1", vars["check"])
     }
-    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 3000)
+
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
     assert(await driver.findElement(By.css(".dropdown-toggle")).getText() == "대기중")
     // // 삭제 테스트
     console.log("삭제 테스트")
     await driver.findElement(By.name("deleteBtn")).click()
     assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
     await driver.switchTo().alert().dismiss()
-    await driver.get("http://todo.wooyu.world/")
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
+
     assert(await driver.findElement(By.css(".dropdown-toggle")).getText() == "대기중")
     assert(await driver.findElement(By.css("span:nth-child(3)")).getText() == "loop title1")
     // // 삭제하기
@@ -111,7 +112,6 @@ describe('DeleteTest', function() {
     await driver.switchTo().alert().accept()
   })
   it('TC00000057', async function() {
-    await driver.get("http://todo.wooyu.world/")
     vars["check"] = await driver.executeScript("return 1")
     const times = 1
     for(let i = 0; i < times; i++) {
@@ -119,34 +119,39 @@ describe('DeleteTest', function() {
       // 모달 나타날때까지 기다림
       await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
       await driver.findElement(By.id("exampleModalLabel")).click()
-      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop titlevars["check"]")
+      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop title" + vars["check"])
       await driver.findElement(By.id("addDate")).click()
       await driver.findElement(By.id("addDate")).sendKeys("002024-03-09")
       await driver.findElement(By.id("modalSaveBtn")).click()
       vars["check"] = await driver.executeScript("return arguments[0] + 1", vars["check"])
     }
-    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 3000)
+
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
+
+    assert(await driver.findElement(By.css(".dropdown-toggle")).getText() == "대기중")
     await driver.findElement(By.css(".dropdown-toggle")).click()
     await driver.findElement(By.linkText("진행중")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     assert(await driver.findElement(By.css(".dropdown-toggle")).getText() == "진행중")
     // // 삭제하기
     console.log("삭제하기")
     await driver.findElement(By.name("deleteBtn")).click()
     assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
     await driver.switchTo().alert().accept()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
     }
   })
   it('TC00000058', async function() {
-    await driver.get("http://todo.wooyu.world/")
     vars["check"] = await driver.executeScript("return 1")
     const times = 1
     for(let i = 0; i < times; i++) {
@@ -154,31 +159,33 @@ describe('DeleteTest', function() {
       // 모달 나타날때까지 기다림
       await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
       await driver.findElement(By.id("exampleModalLabel")).click()
-      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop titlevars["check"]")
+      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop title" + vars["check"])
       await driver.findElement(By.id("addDate")).click()
       await driver.findElement(By.id("addDate")).sendKeys("002024-03-09")
       await driver.findElement(By.id("modalSaveBtn")).click()
       vars["check"] = await driver.executeScript("return arguments[0] + 1", vars["check"])
     }
-    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 3000)
+
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
+
     await driver.findElement(By.css(".dropdown-toggle")).click()
     await driver.findElement(By.linkText("진행중")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     assert(await driver.findElement(By.css(".dropdown-toggle")).getText() == "진행중")
     // // 삭제 테스트
     console.log("삭제 테스트")
     await driver.findElement(By.name("deleteBtn")).click()
     assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
     await driver.switchTo().alert().dismiss()
-    await driver.get("http://todo.wooyu.world/")
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
     assert(await driver.findElement(By.css(".dropdown-toggle")).getText() == "진행중")
     assert(await driver.findElement(By.css("span:nth-child(3)")).getText() == "loop title1")
     // // 삭제하기
@@ -188,7 +195,6 @@ describe('DeleteTest', function() {
     await driver.switchTo().alert().accept()
   })
   it('TC00000059', async function() {
-    await driver.get("http://todo.wooyu.world/")
     vars["check"] = await driver.executeScript("return 1")
     const times = 1
     for(let i = 0; i < times; i++) {
@@ -196,34 +202,38 @@ describe('DeleteTest', function() {
       // 모달 나타날때까지 기다림
       await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
       await driver.findElement(By.id("exampleModalLabel")).click()
-      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop titlevars["check"]")
+      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop title" + vars["check"])
       await driver.findElement(By.id("addDate")).click()
       await driver.findElement(By.id("addDate")).sendKeys("002024-03-09")
       await driver.findElement(By.id("modalSaveBtn")).click()
       vars["check"] = await driver.executeScript("return arguments[0] + 1", vars["check"])
     }
-    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 3000)
+
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
+
     await driver.findElement(By.css(".dropdown-toggle")).click()
     await driver.findElement(By.linkText("완료")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     assert(await driver.findElement(By.css(".dropdown-toggle")).getText() == "완료")
     // // 삭제하기
     console.log("삭제하기")
     await driver.findElement(By.name("deleteBtn")).click()
     assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
     await driver.switchTo().alert().accept()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
     }
   })
   it('TC00000060', async function() {
-    await driver.get("http://todo.wooyu.world/")
     vars["check"] = await driver.executeScript("return 1")
     const times = 1
     for(let i = 0; i < times; i++) {
@@ -231,31 +241,33 @@ describe('DeleteTest', function() {
       // 모달 나타날때까지 기다림
       await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
       await driver.findElement(By.id("exampleModalLabel")).click()
-      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop titlevars["check"]")
+      await driver.findElement(By.id("exampleModalLabel")).sendKeys("loop title" + vars["check"])
       await driver.findElement(By.id("addDate")).click()
       await driver.findElement(By.id("addDate")).sendKeys("002024-03-09")
       await driver.findElement(By.id("modalSaveBtn")).click()
       vars["check"] = await driver.executeScript("return arguments[0] + 1", vars["check"])
     }
-    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 3000)
+
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
+
     await driver.findElement(By.css(".dropdown-toggle")).click()
     await driver.findElement(By.linkText("완료")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     assert(await driver.findElement(By.css(".dropdown-toggle")).getText() == "완료")
     // // 삭제 테스트
     console.log("삭제 테스트")
     await driver.findElement(By.name("deleteBtn")).click()
     assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
     await driver.switchTo().alert().dismiss()
-    await driver.get("http://todo.wooyu.world/")
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
     assert(await driver.findElement(By.css(".dropdown-toggle")).getText() == "완료")
     assert(await driver.findElement(By.css("span:nth-child(3)")).getText() == "loop title1")
     // // 삭제하기
