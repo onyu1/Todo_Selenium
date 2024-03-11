@@ -15609,7 +15609,7 @@
         ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
         ["xpath=//div/div/input[2]", "xpath:position"]
       ],
-      "value": "002024-03-09"
+      "value": "002024-03-11"
     }, {
       "id": "e6a7ac71-a028-4893-ada1-9e48f93dbe12",
       "comment": "",
@@ -15692,7 +15692,7 @@
         ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
         ["xpath=//div/div/input[2]", "xpath:position"]
       ],
-      "value": "002024-03-10"
+      "value": "002024-03-12"
     }, {
       "id": "61dce11c-3792-4b65-8e1f-a8eb30249fa4",
       "comment": "",
@@ -15769,10 +15769,21 @@
       "targets": [],
       "value": ""
     }, {
-      "id": "53db73d2-a35b-4696-9ddf-6a2ba255ef5b",
+      "id": "165d60da-6908-4ac0-bd56-5b105e694801",
       "comment": "",
-      "command": "executeScript",
-      "target": "const element = document.evaluate('//*[contains(@class, \"span\")]', document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue; return element !== null && element.textContent.trim() === \"test ti2222\";",
+      "command": "assertText",
+      "target": "css=span:nth-child(3)",
+      "targets": [
+        ["css=span:nth-child(3)", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"]
+      ],
+      "value": "test title"
+    }, {
+      "id": "53db73d2-a35b-4696-9ddf-6a2ba255ef5b",
+      "comment": "//test ti 포함하는지 mcoah.js로 작성하여 확인",
+      "command": "echo",
+      "target": "test ti 포함하는지 mcoah.js로 작성하여 확인",
       "targets": [],
       "value": ""
     }, {
@@ -15839,6 +15850,3535 @@
       "value": ""
     }, {
       "id": "37574d78-837f-4eb4-ae0b-203d5237dcd9",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "c5473767-99c0-41ff-a54d-f6b136e398c3",
+    "name": "TC00000065",
+    "commands": [{
+      "id": "f1b42199-5ed6-484f-b2d7-373cd140a594",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "829679be-8cf1-44c9-ad45-d037e8bae15e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9495ca0a-3f9e-4e1d-8386-b14e8c059b6c",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "e816adba-99fa-4903-a115-b996f5f0ad2c",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9fa5b28-23e9-4db8-bb96-0bccb85217f8",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title65"
+    }, {
+      "id": "aa00ff4a-688e-441e-970a-806f596c7e08",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "648228de-b738-4e59-9679-d7db31e657ac",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "43255dcd-7ba7-4726-909b-5ee5f2ccd96d",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "091c7086-a1f7-4234-97df-dd9bd2bf5293",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3ad0bb62-76da-4bf5-8de9-665aaddb23de",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c132fa2-ae4b-4ba3-b6cb-5f40f00aaca5",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "d20d8224-2b07-4bb3-86c9-5d0bc44ad0c6",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e41ba172-c599-4404-9d61-5d4721af1d01",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title65"
+    }, {
+      "id": "dec9be41-58b9-42d6-af59-38e46e8912a0",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9050f4e6-244d-4af6-a44e-e0badeffc84a",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-12"
+    }, {
+      "id": "b3365395-d66f-49e7-8316-6ec2a9a60fde",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8316cc2-1e5f-45df-aa8e-ff1269149b74",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'To do list')]", "xpath:innerText"]
+      ],
+      "value": "To do list"
+    }, {
+      "id": "c5caa530-1891-4bf7-b2cc-55c091c64b7d",
+      "comment": "//여기까지 전제조건",
+      "command": "assertElementPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f39afcec-f395-4134-bea2-38cce5bd5f5a",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchTitle",
+      "targets": [
+        ["id=searchTitle", "id"],
+        ["css=#searchTitle", "css:finder"],
+        ["xpath=//input[@id='searchTitle']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2f886300-0112-4950-8e35-78d32ae76f72",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchTitle",
+      "targets": [],
+      "value": "test title65"
+    }, {
+      "id": "5a573721-31f7-487f-a131-33650b3e8ef3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchIcon",
+      "targets": [
+        ["css=.bi-search-heart-fill", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "be0f7eae-042d-4e7e-a12d-6bdc620c93d4",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "121df5e7-fa91-4ab5-b267-ffb25c8040ce",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(2) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65566542-5f40-4aff-a44b-f24bcada2302",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(1) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title65"
+    }, {
+      "id": "8842e80f-0690-4a59-a95c-ad6fc78271e2",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(2) span",
+      "targets": [
+        ["css=.card:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div[2]/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/span", "xpath:position"]
+      ],
+      "value": "test title65"
+    }, {
+      "id": "dd7d159b-456c-4e90-814a-7b0189658cf8",
+      "comment": "// 삭제하기",
+      "command": "echo",
+      "target": "삭제하기",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c209a8a6-cbc5-4cb3-9ff9-8609d5453867",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5903cddb-d532-4664-906d-8f682bc7d71b",
+      "comment": "",
+      "command": "times",
+      "target": "2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "690f5e6e-4e23-417a-a245-64801c26bf67",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6eab1513-3f09-4d14-af22-a5ec2e271d61",
+      "comment": "",
+      "command": "click",
+      "target": "name=deleteBtn",
+      "targets": [
+        ["name=deleteBtn", "name"],
+        ["css=.card:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=//button[@name='deleteBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "521238df-2cdb-48ed-8820-3f9d6e6c3a86",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "삭제하시겠습니까?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "3737ae00-8daf-4fd3-b7d9-6b07f40746f2",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fc61acb6-62b2-4161-be08-b361ab01203e",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8ab863b3-4a61-44fe-9dfe-70b902de7311",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "2b0f5a5f-bd6d-4b7e-933f-6c1b13ca7d2c",
+    "name": "TC00000066",
+    "commands": [{
+      "id": "87c9b774-7659-47ad-a3f1-bb8920ee8a5a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d00aaa3c-de2f-4eb9-a3eb-33ebdfc5cb62",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "19d7cbfb-acc3-48a6-ba6c-fde15f2d5e51",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "8a1ffdb5-fd2c-43e7-956e-a3cabcbd6547",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9e018eee-c5e4-4d95-8427-0a59a9a9b343",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title66"
+    }, {
+      "id": "9d9fdcb7-8458-4fbc-858d-29721ae48160",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d5d3f35f-998e-4abc-b855-8b51f7dbde91",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "35ea6e14-e086-4964-966f-7882e9556d99",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e7554173-97d7-461d-a99d-6070b7cbccab",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6e0679d-f6a2-46cc-aa41-f0785caa546a",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a3c8fc21-7aec-4dab-a90c-0fd3a029c3e0",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "8f69b500-5a2e-44ec-8a1f-d08488afebe2",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3380f627-cd69-407d-99da-16c853e0767f",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title66"
+    }, {
+      "id": "cd89e479-7120-4318-b360-d739bdf105cf",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3742b6af-6e4c-474c-8d55-8141228d7e74",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-12"
+    }, {
+      "id": "04a765ee-79a7-4bdf-940a-e31b3c5e4225",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c642a54e-3f31-41e1-9531-2d9ae9bd84da",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'To do list')]", "xpath:innerText"]
+      ],
+      "value": "To do list"
+    }, {
+      "id": "e16fcd4e-f56f-4727-96ed-8cf1715903b6",
+      "comment": "//여기까지 전제조건",
+      "command": "assertElementPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "83b7dc90-2139-464a-ab87-a75f6005b66e",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchTitle",
+      "targets": [
+        ["id=searchTitle", "id"],
+        ["css=#searchTitle", "css:finder"],
+        ["xpath=//input[@id='searchTitle']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "383a7e7a-3c87-44a5-8a2d-b49ea6a70fa1",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchTitle",
+      "targets": [],
+      "value": "test ti"
+    }, {
+      "id": "fc33f9cb-7d6c-479c-8449-03abda30059b",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchIcon",
+      "targets": [
+        ["css=.bi-search-heart-fill", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87ccc5fd-a647-42e4-a53e-436179db0c53",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "92c5a37f-e33e-46f0-a3b3-8be663b561ec",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(2) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div[2]/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div[2]/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "50965234-218b-41a7-9a36-29373f6d3286",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(1) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title66"
+    }, {
+      "id": "b592e106-f75b-4d83-9907-bd6a53f65ada",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(2) span",
+      "targets": [
+        ["css=.card:nth-child(2) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div[2]/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/div/span", "xpath:position"]
+      ],
+      "value": "test title66"
+    }, {
+      "id": "2f9bd246-ae28-465f-a4fe-9359addd7c36",
+      "comment": "//test ti 포함하는지 mcoah.js로 작성하여 확인",
+      "command": "echo",
+      "target": "test ti 포함하는지 mcoah.js로 작성하여 확인",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "dd7a4c2e-0f62-4f9c-a27f-767a52a4021a",
+      "comment": "// 삭제하기",
+      "command": "echo",
+      "target": "삭제하기",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d73a352a-0256-445c-a009-2ba9c908786a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a1f284ff-323e-4d5a-b904-06112c217862",
+      "comment": "",
+      "command": "times",
+      "target": "2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bb469432-4b34-4ff7-ae4c-baecb669e737",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94abcc9e-aa65-407a-8537-f2b0a0ccbeeb",
+      "comment": "",
+      "command": "click",
+      "target": "name=deleteBtn",
+      "targets": [
+        ["name=deleteBtn", "name"],
+        ["css=.card:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=//button[@name='deleteBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1900e2c4-96f9-4ec1-84c4-beb632a47877",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "삭제하시겠습니까?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "afb71f4a-abc7-4609-8869-ba438f89a85d",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e277feee-9984-48b6-a7d2-0bf1a57d578c",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "562854af-7dc0-4611-9e2e-f7a7869af8d3",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "095b8424-5d42-4ad0-a105-b8a52c8fd5d7",
+    "name": "TC00000067",
+    "commands": [{
+      "id": "12eb1547-2762-45fe-bcf8-2fe719f75140",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "59760bfc-74c0-46a6-b458-5ae56e1f0bdd",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3c8c2d75-0c5a-438a-8e46-303c2625a179",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "75d4fb38-1172-4f62-8984-7c782b29a767",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3b8384e0-8b13-4ec5-b07a-80763a22a1ec",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title67"
+    }, {
+      "id": "b006e3d6-63dc-4ac7-aeb0-4cc9c24cc376",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3fc867ea-7721-4477-8c0a-c8789f3e2cf1",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "e1b417d1-6709-48a7-b57d-a0c472533f56",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "0bdb3e9b-c3bf-408c-a728-884d068eb8ef",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c66184f7-8370-4dc1-886a-cceb66da7b68",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1b7b2269-9b2f-4d2f-97a2-8ff2876b55e4",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "cf89b4e7-4c5e-41b8-ada2-336185f571f1",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2b928f7e-079d-4f91-b4b6-32a00f9e179a",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "to do6 list7"
+    }, {
+      "id": "a402bb73-45a0-455f-bd91-f8dfb2e7ef68",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "120631cd-63f5-4d0a-aeff-c8527056a53a",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "f07a6f11-c6e2-4016-a00a-67d192ad81a1",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "819b3552-7704-4709-b736-ba60ec044048",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'To do list')]", "xpath:innerText"]
+      ],
+      "value": "To do list"
+    }, {
+      "id": "7bea231e-d65f-4c1f-b676-1b70bc638103",
+      "comment": "//여기까지 전제조건",
+      "command": "assertElementPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c143d3f6-35ee-4803-96e6-af1a2a92f751",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchTitle",
+      "targets": [
+        ["id=searchTitle", "id"],
+        ["css=#searchTitle", "css:finder"],
+        ["xpath=//input[@id='searchTitle']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d95e8187-7c48-4c8a-a5e9-7bac6fab0ee3",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchTitle",
+      "targets": [],
+      "value": "test title67"
+    }, {
+      "id": "22605a2d-76c0-4908-92ae-f2838f9496eb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchIcon",
+      "targets": [
+        ["css=.bi-search-heart-fill", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cfd96696-3b74-41f6-a55d-286632f80904",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "a9566b52-f90f-4f87-9ed4-307165f6acb8",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "64f28e3d-d502-4fe9-a717-5d20f9d0a154",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(1) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title67"
+    }, {
+      "id": "f8596d3d-ffe8-42a6-8a94-3c0144b4e7eb",
+      "comment": "// 삭제하기",
+      "command": "echo",
+      "target": "삭제하기",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "caa03a13-052c-4d8f-b483-7ac6814b409a",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "44a0610d-85a1-4a06-943b-54467e01e278",
+      "comment": "",
+      "command": "times",
+      "target": "2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f79e8747-16b6-4c96-a6b8-2b6ca1e56639",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ed406ad0-9e53-43a2-9794-b15989a7c84c",
+      "comment": "",
+      "command": "click",
+      "target": "name=deleteBtn",
+      "targets": [
+        ["name=deleteBtn", "name"],
+        ["css=.card:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=//button[@name='deleteBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e9e93aab-fe3b-49e9-9f9b-2e2269b39f81",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "삭제하시겠습니까?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ff80bd18-e5cd-48da-8278-1871b2c7de09",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6f9a2db1-f3c8-4504-ae8a-3b9c75d3c9a8",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4617df29-90da-47c7-8496-a71e447d2043",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f884fb92-f91a-4124-b2d4-007fedef6284",
+    "name": "TC00000068",
+    "commands": [{
+      "id": "9c7322b7-c6b0-4b9c-92b4-de50cf3ff1e9",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9baf9251-8223-4801-82cd-cb84dc0f966c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d82905c8-fb64-4bed-87c1-cddec35935c4",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "ba7dc11d-92b4-4ecc-a017-8df16984fd87",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "69a1855d-481d-45ab-b5d5-bc6ece56e060",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title68"
+    }, {
+      "id": "991fdaa7-494b-4099-9344-fac850f51162",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "50337d0d-36b0-4644-9e0e-957891567218",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "797b5aaa-a4a1-48dc-9553-8775ce3fd35e",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "4911263d-7e09-40de-bfd1-46c40523f6e3",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70161870-eb30-4964-84e0-a25e8c11b36d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "aba55b8f-942c-4d0c-a033-c1fe1d0f0b2c",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "37434d0f-f634-4db1-9067-16df15ddaf56",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d736ed88-3158-4aa4-bcaf-090ebfa65b77",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "to do6 list8"
+    }, {
+      "id": "25a5fc80-2cd9-44e8-99e5-8086f8209584",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ff7b895b-992b-487f-9f9b-3498f8c0418c",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "38407934-6b5f-43e7-ba1f-ee2682c0be6c",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "fb8806ef-2cd9-4da3-9338-915b5cf28ea1",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'To do list')]", "xpath:innerText"]
+      ],
+      "value": "To do list"
+    }, {
+      "id": "cb7b511b-f1fa-433a-99bb-6486f0dcb205",
+      "comment": "//여기까지 전제조건",
+      "command": "assertElementPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "475cb339-2440-4b56-b7d1-db9cd4684494",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchTitle",
+      "targets": [
+        ["id=searchTitle", "id"],
+        ["css=#searchTitle", "css:finder"],
+        ["xpath=//input[@id='searchTitle']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "217c3115-eb4b-46a5-a7ce-f6a9380241ab",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchTitle",
+      "targets": [],
+      "value": "test ti"
+    }, {
+      "id": "5f41e3e4-437e-4b50-96e3-8679de6f9b16",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchIcon",
+      "targets": [
+        ["css=.bi-search-heart-fill", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1e45f2a5-46c7-46ac-ab2e-7b126bc28b16",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6f100cf9-d0fd-4a9c-b389-53959c177460",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "699b7d89-6dff-427a-a725-5b19ed60944e",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(1) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title68"
+    }, {
+      "id": "ba97f40d-9078-46a7-b743-06b5c6b392b1",
+      "comment": "//test ti 포함하는지 mcoah.js로 작성하여 확인",
+      "command": "echo",
+      "target": "test ti 포함하는지 mcoah.js로 작성하여 확인",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "94e0641d-6b5b-4e9b-86d4-83983432d3ac",
+      "comment": "// 삭제하기",
+      "command": "echo",
+      "target": "삭제하기",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "81a0b759-9815-4e54-83b5-f90a7897d853",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1d26323d-19f3-45b7-83f9-1b478143b9a5",
+      "comment": "",
+      "command": "times",
+      "target": "2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1e4199d1-c963-424f-bee0-42d2a8bb03e6",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70d4440a-d987-44bf-9bb5-9839fb996f1b",
+      "comment": "",
+      "command": "click",
+      "target": "name=deleteBtn",
+      "targets": [
+        ["name=deleteBtn", "name"],
+        ["css=.card:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=//button[@name='deleteBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3dfe9af6-d4b8-4d7d-862f-2d03b17a8d5f",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "삭제하시겠습니까?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c8005d5-c36f-4fcd-9795-977ed9c782c3",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "56336481-67ab-4fa5-8a1c-ce1fd11a70d9",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cefbd23b-8cbe-4e87-a5f1-21bb10d13457",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "46fc6cb5-6b0f-4835-9ac2-990020b0a368",
+    "name": "TC00000069",
+    "commands": [{
+      "id": "09c5b814-bc85-46fd-9d99-553b1e4ac92b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8956f30c-0120-467c-b638-b14d3a50bfdc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "497f8c4a-325b-4923-b062-1e71ab56b10b",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "4718217d-7643-4739-a8f3-0aabdb02c748",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "de4288e1-26a1-4b93-8a5a-a61d1d8a3924",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title69"
+    }, {
+      "id": "ffd6e41c-c627-45af-ba47-933574605239",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "452b3005-3993-4350-a85d-d07d9780f17b",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "13f6e0ec-e15d-4e79-9318-eb760c363dd6",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3fb9b4cb-a7ac-4d3c-8c7b-20f7be00da38",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "70d30f9f-4d34-49c1-8d33-85f429b21e40",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "36b4484d-c730-4de1-9959-b3341ac1ed83",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "eeea0a8a-3b11-463b-871e-44adb6216f97",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e46c2a5e-0580-4f04-8603-136e08c4f01f",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title69"
+    }, {
+      "id": "d4bc4550-bfe6-4fcd-ad4e-2a72adbba3a7",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "32980521-bf47-486f-868c-3439af68ddff",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "cf9f3227-cffb-475b-867c-a85ff9b54371",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "7fcabacb-bf40-45f5-8abb-2ff39fd5838b",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'To do list')]", "xpath:innerText"]
+      ],
+      "value": "To do list"
+    }, {
+      "id": "7ae14f34-0909-48db-bc53-f1e8b2ae4956",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6d32b5fa-8b8a-4cff-8751-7537a63457a9",
+      "comment": "//여기까지 전제조건",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "65094a71-a115-4560-9f6a-4721d9ebfac8",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchTitle",
+      "targets": [
+        ["id=searchTitle", "id"],
+        ["css=#searchTitle", "css:finder"],
+        ["xpath=//input[@id='searchTitle']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ee01164e-83d8-4dcf-bc67-89a09c71b3c6",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchTitle",
+      "targets": [],
+      "value": "test title69"
+    }, {
+      "id": "82117660-4db5-4b00-bc3e-b158c8405c50",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchIcon",
+      "targets": [
+        ["css=.bi-search-heart-fill", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ba59b14d-a45d-48ea-8528-1f82b37fb799",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "22aa5729-ada7-4f1a-a611-5db98637cf12",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "abebf768-10ff-4fa7-8e16-376b5ce0c77b",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(1) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title69"
+    }, {
+      "id": "04502d32-a24b-4bdf-b768-befbacc5c813",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(2) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title69"
+    }, {
+      "id": "03327ede-264b-4a41-aaa4-5eda6dc2d2cc",
+      "comment": "// 삭제하기",
+      "command": "echo",
+      "target": "삭제하기",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9250c0a2-e70e-4a8d-962f-9d2168e999ce",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76b460f0-0bbd-4fa3-b352-471570f1a4cc",
+      "comment": "",
+      "command": "times",
+      "target": "2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b07e5b06-3f1f-49b9-97a8-dee64c687247",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b26b87c4-b2f7-478e-afe4-b0f337188469",
+      "comment": "",
+      "command": "click",
+      "target": "name=deleteBtn",
+      "targets": [
+        ["name=deleteBtn", "name"],
+        ["css=.card:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=//button[@name='deleteBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8730d02f-1bc5-4d8a-b17d-c00dede622bd",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "삭제하시겠습니까?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "de5df768-4189-429e-9f15-c80ca933bbd5",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7d9f98cc-8a47-4da0-b6d2-f7d51ac3f8e6",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca50d19b-a06b-41bd-b88f-a8dc99cf1a20",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "64082410-daa0-4764-b8c2-f533e4ec8961",
+    "name": "TC00000070",
+    "commands": [{
+      "id": "9296c26f-12ee-4f5b-9fcf-d11bfcf7ec34",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ce95540e-1559-4422-a9d1-6bd239428e1e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "2e5f1a05-1ce2-43f3-9cc4-4f986f3304e5",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "7ac44905-ad1b-4085-b280-f87eea2b1697",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9d005057-29d7-49d5-a717-cdc396d203b5",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title70"
+    }, {
+      "id": "2f57ae9f-a41d-4550-86f0-1efddaa8296f",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3055d1fe-d10c-4501-bfa9-18f657853b5f",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "15631508-d093-4ed0-be73-ff6cc4a58b84",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "60157607-4539-4cef-9811-4b26a9552e0d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ca6d9aac-a6f0-45cc-86fa-7ae77cc5b2d9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dc06e13c-4ce2-406a-a713-b02e2cd87062",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "1c3210b5-daab-45c3-b264-e77882a35a75",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7b30c67c-e7d2-4fa7-b4ed-edc9a4d28c65",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title70"
+    }, {
+      "id": "465bb948-e6cf-475f-aaeb-5eaabeb5ef3a",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "68c4b336-6db2-4217-b44a-4bd5904f6d71",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "5e982ffa-7266-4123-b280-87b9c78e846e",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "15601f67-bff8-4b7e-93a8-330ba1940ce0",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'To do list')]", "xpath:innerText"]
+      ],
+      "value": "To do list"
+    }, {
+      "id": "30381044-e4ac-4fb9-8f0f-b6ca63650fc1",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b06be9dd-e602-43b8-9776-90bc2607c73e",
+      "comment": "//여기까지 전제조건",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "63df3c6e-a0c6-48a1-b699-7fb47fe64b7a",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchTitle",
+      "targets": [
+        ["id=searchTitle", "id"],
+        ["css=#searchTitle", "css:finder"],
+        ["xpath=//input[@id='searchTitle']", "xpath:attributes"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4ea75aef-a65f-46c2-8f85-52c8b749ff1e",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchTitle",
+      "targets": [],
+      "value": "test ti"
+    }, {
+      "id": "68151a87-2f6f-4d0b-8bc1-3b5e4e9fe2c3",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchIcon",
+      "targets": [
+        ["css=.bi-search-heart-fill", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "33285054-cb9d-49b1-88bd-2cb55f3c39a5",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "be19d753-42e8-48fe-bfcd-640a9bad29d4",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7882808-d799-4281-bcff-3c61ab34cee1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(1) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title70"
+    }, {
+      "id": "823abfc1-3f0e-4ae9-87ef-f7092a3403cc",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(2) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title70"
+    }, {
+      "id": "89bd2770-4f4c-4a32-80ed-85df15e5d407",
+      "comment": "//test ti 포함하는지 mcoah.js로 작성하여 확인",
+      "command": "echo",
+      "target": "test ti 포함하는지 mcoah.js로 작성하여 확인",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea7c20b6-bdb9-4476-8e64-554ab920f305",
+      "comment": "// 삭제하기",
+      "command": "echo",
+      "target": "삭제하기",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ff1835ec-b333-4d25-aeea-67cc077c03d5",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bd52cf0f-38f0-4bf2-93bf-d6894ff49ecd",
+      "comment": "",
+      "command": "times",
+      "target": "2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "40ea184e-5284-4167-be98-0459371083db",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0af3ca91-d652-4a6d-84a7-ab6cb7d779a8",
+      "comment": "",
+      "command": "click",
+      "target": "name=deleteBtn",
+      "targets": [
+        ["name=deleteBtn", "name"],
+        ["css=.card:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=//button[@name='deleteBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d35fd07f-4da1-4a27-9942-8efb4bd272ee",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "삭제하시겠습니까?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "211562bf-51c7-4b34-97fa-5d784bee27c3",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "75101b17-757a-4d8f-b960-92cd190e3c89",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d8191522-ada9-483e-bf03-73dcddb4d4f3",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "0e9d0248-863b-4844-8d96-0633f1b742b0",
+    "name": "TC00000071",
+    "commands": [{
+      "id": "4cbaf908-47da-43f2-afb2-ea435e94a6b0",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "01bef870-67d5-4ef6-817e-6af212f23eda",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "268ab38d-0c93-4d30-9d2f-9c72b30c3e3d",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "408b65e5-6a9d-4156-9bc8-d585610e6739",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "978e8e3d-ce79-480b-947b-bdfcc42de894",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title71"
+    }, {
+      "id": "a3d43cb8-35b4-4bca-adac-6154d26286b2",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1c8ff704-857a-4467-8c7a-e733cdbc691f",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "073e9564-3140-42ce-84fd-57c1609fcd8f",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c0615eae-45e3-413b-9b30-3b1c8a1101bd",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af9e19a9-ae09-472a-85de-924a4d4fdeb2",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'To do list')]", "xpath:innerText"]
+      ],
+      "value": "To do list"
+    }, {
+      "id": "30f69720-371b-4c33-b2c3-a2dd8640e1a3",
+      "comment": "//여기까지 전제조건",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "da6f1150-1783-4d57-bf5a-9d9a196726ad",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchDate",
+      "targets": [
+        ["id=searchDate", "id"],
+        ["css=#searchDate", "css:finder"],
+        ["xpath=//input[@id='searchDate']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "75658f96-d123-4bad-abf9-1dd54932768b",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchDate",
+      "targets": [],
+      "value": "002024-04-11"
+    }, {
+      "id": "b99e4c79-567a-4a1e-b4fc-8f5c2d7f8f22",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchIcon",
+      "targets": [
+        ["css=.bi-search-heart-fill", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eef84170-5137-4fef-91d6-c0f18236f8c1",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [
+        ["css=.card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fc90423-a641-40f0-b38a-d7b40e18976c",
+      "comment": "// 삭제하기",
+      "command": "echo",
+      "target": "삭제하기",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "39f59f34-cb10-45ae-8a45-4ad4a161a82b",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "34a597ed-779f-4401-923a-fb1bb2c4b7ff",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "92480fd3-bc94-4518-b29d-ccd00fc0c187",
+      "comment": "",
+      "command": "click",
+      "target": "name=deleteBtn",
+      "targets": [
+        ["name=deleteBtn", "name"],
+        ["css=.card:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=//button[@name='deleteBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "3df23233-63e4-45d5-a35c-34b2e6ed8b28",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "삭제하시겠습니까?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "71800ca9-a681-4da6-a486-a67e8da9fe6f",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5810209b-31b0-4512-ac61-d0eeb9bcb73d",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "f2121a1c-a9e5-465c-a0d0-9332f1df75f6",
+    "name": "TC00000072",
+    "commands": [{
+      "id": "57b0751a-211f-4256-a50b-dfc2d4fc8ec7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f2b33ce0-d571-40b9-89d9-72d367becdb0",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c9d70985-a371-40d4-88ae-2897ee06d7d2",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "f3d58c4a-7cc4-4485-832a-a3d4ee1360d3",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "589e1fb5-60cf-4e56-a705-f44b500923cb",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title72"
+    }, {
+      "id": "e8777da4-81c8-493b-a3ce-8da5efbd0713",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "50755fd0-c634-4dd0-b51c-74ba760d3df7",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "c1a75860-7524-49da-96d8-9135f5db82eb",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "10e0ac77-43f5-4bee-b6d7-a221295a0096",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c286c016-69a2-4963-beaa-ee4969117430",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "dcc0cbb7-e215-4a67-ba59-a1dec606147d",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "3db13057-09bc-41ba-8a65-78fbc491156a",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "01c59baa-284d-4012-9889-4f853aa6ff94",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "to do7 list2"
+    }, {
+      "id": "e9df5297-9513-4242-8d6c-ebe81c9e5aee",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "87c49cf4-8481-4088-ad7f-a012ec35a28d",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-12"
+    }, {
+      "id": "0e0dc50c-b2ea-43a9-b7b8-a8c5b5ef6919",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "06b1a1e9-ca13-46bd-bdf3-bfd686fac5e0",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'To do list')]", "xpath:innerText"]
+      ],
+      "value": "To do list"
+    }, {
+      "id": "fae32cc5-c470-4748-8073-da7ae8169454",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f1f8a85-e7cf-4ae2-b43d-4e161c252721",
+      "comment": "//여기까지 전제조건",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "df59356b-7531-4679-927a-51b84626bb8a",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchDate",
+      "targets": [
+        ["id=searchDate", "id"],
+        ["css=#searchDate", "css:finder"],
+        ["xpath=//input[@id='searchDate']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "86aad984-71e0-4d0d-9dc5-6c3edcbb3886",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchDate",
+      "targets": [],
+      "value": "002024-03-11"
+    }, {
+      "id": "e73dd967-4f21-47f2-a6ff-12f47b93cd20",
+      "comment": "// search date value는 002024",
+      "command": "assertValue",
+      "target": "id=searchDate",
+      "targets": [],
+      "value": "002024-03-11"
+    }, {
+      "id": "d93a02bc-5303-4e52-ab4e-7c78a5549a77",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchIcon",
+      "targets": [
+        ["css=.bi-search-heart-fill", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "601d21f2-17a9-43be-968a-bb6ab92bbf15",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4b928976-a909-4a62-b30d-758e1e41b060",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "d213e882-c773-4570-876a-a089520bc086",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(1) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title72"
+    }, {
+      "id": "429c01f1-cb7f-4817-a29d-6408da5ecbe2",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(1)",
+      "targets": [
+        ["css=.btn-primary:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "89cbd017-abfd-45bd-b1ba-821609046998",
+      "comment": "//모달 date value는 2024",
+      "command": "assertValue",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "2024-03-11"
+    }, {
+      "id": "947e9720-3ec5-4c6f-b910-39940aa2ce66",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-close",
+      "targets": [
+        ["css=.btn-close", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f012cdca-f505-4917-b164-62d21c758923",
+      "comment": "// 삭제하기",
+      "command": "echo",
+      "target": "삭제하기",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f0eb8593-6d84-404d-9ff3-3837f3cefaa7",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "ea9f3e09-48f1-4341-bf0f-abb86eb7659e",
+      "comment": "",
+      "command": "times",
+      "target": "2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d4dd9878-72d8-49d4-96b9-0fe0d82c2ea8",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "33786766-194e-4f57-944d-127d9a047c30",
+      "comment": "",
+      "command": "click",
+      "target": "name=deleteBtn",
+      "targets": [
+        ["name=deleteBtn", "name"],
+        ["css=.card:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=//button[@name='deleteBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "66bbe1ac-fff7-49ea-b12b-ef97934970fa",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "삭제하시겠습니까?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4baa04e-8645-4299-80ed-9893626209ff",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d2da8104-e382-449b-aca6-a815d9c760b6",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f702e01f-0543-4612-9de7-042a8cb47561",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "69d6ff4c-4c99-423e-9980-13c5edf5ac65",
+    "name": "TC00000073",
+    "commands": [{
+      "id": "bd6d99b1-af06-492a-ad49-b8776efaddc1",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "aa22424f-dc92-4840-9646-4a5eaaaa72dc",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7993c399-c186-410c-8356-82632834f083",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "cd6d51ab-5bcc-4712-ad54-833f8ac00184",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e72a806e-446d-4fee-96ab-103d691c1037",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title73"
+    }, {
+      "id": "3083bbc5-30a9-484d-8731-d0dbe597a22a",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "04eb08bd-0e33-44db-a4b1-4b0040dfa941",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "fad59fb1-8fe4-40ff-9c77-e5613c029e47",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "6034dbb2-5892-4510-8f01-412691b5d936",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0bed6a6f-ed94-42c7-955a-c83cf1f98829",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e97e7662-52c7-4d2e-a452-128ea7328db9",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "002c69ad-0186-4149-888d-29d867b071a1",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a2a282d-8797-4360-9cdf-4a3de4763778",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title73"
+    }, {
+      "id": "1dc2e540-87db-4dc2-abb5-1ffe258323ba",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c37baec2-dae0-4626-972d-bf3c5fc680a2",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-12"
+    }, {
+      "id": "aed8b5c5-60f2-4c98-8fe8-4dcd2ce38f43",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3abb1d3d-0734-49fe-aadf-0681ebba82ff",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'To do list')]", "xpath:innerText"]
+      ],
+      "value": "To do list"
+    }, {
+      "id": "bc1b10e5-1971-4eae-8014-bd232525802c",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f234865d-59ff-4117-ba60-ae735bf7679e",
+      "comment": "//여기까지 전제조건",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "cebeefea-f40c-42f3-bebd-490daefedad1",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchDate",
+      "targets": [
+        ["id=searchDate", "id"],
+        ["css=#searchDate", "css:finder"],
+        ["xpath=//input[@id='searchDate']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e446ccf7-2c9a-4181-ae50-e31832652454",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchDate",
+      "targets": [],
+      "value": "002024-03-11"
+    }, {
+      "id": "802e7279-8ee0-4ed3-a174-38b6dea4f261",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchIcon",
+      "targets": [
+        ["css=.bi-search-heart-fill", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "ffdf7900-d40a-451b-93a6-a14ddce01350",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6bc796aa-678d-4dc8-97e6-6470eb1eb240",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "54f14034-13cf-4e5f-9ef7-54a5a32702fb",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(1) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title73"
+    }, {
+      "id": "ecaf6936-6e82-444e-9d25-ebe5d6ca37fb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(1)",
+      "targets": [
+        ["css=.btn-primary:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "0e03bfde-5fc5-4efa-991f-31d355330bb2",
+      "comment": "//모달 date value는 2024",
+      "command": "assertValue",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "2024-03-11"
+    }, {
+      "id": "71aaa4dd-cc54-44cb-a823-80a7217d50b7",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-close",
+      "targets": [
+        ["css=.btn-close", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b71d2155-6106-4514-89f2-215dbef0c162",
+      "comment": "// 삭제하기",
+      "command": "echo",
+      "target": "삭제하기",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "16c8ad53-cb27-4f21-8174-c66a6c8e2d4d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cec37ec3-84ef-494a-b503-27dd043464d9",
+      "comment": "",
+      "command": "times",
+      "target": "2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "332dd336-eb03-4d5b-baf7-5b99b2e0dd34",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "52ddfc8d-4af4-4c88-b589-a543e2bfe77b",
+      "comment": "",
+      "command": "click",
+      "target": "name=deleteBtn",
+      "targets": [
+        ["name=deleteBtn", "name"],
+        ["css=.card:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=//button[@name='deleteBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e6debadf-5a21-4547-b8c0-d73b4b91583e",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "삭제하시겠습니까?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "386f1b0b-20c6-4432-a186-1c0d7992d0fe",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "38e234ab-6697-424c-96ec-981c3d6f9447",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b4325649-fce2-47e9-bacb-3285ca17cd2d",
+      "comment": "",
+      "command": "assertElementNotPresent",
+      "target": "css=.card-body",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "e4a30eac-0cfc-4e41-a14b-470b89ceae5b",
+    "name": "TC00000074",
+    "commands": [{
+      "id": "c5f6870f-bd66-4fa5-bdbf-b80e68ae0779",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1cd6dc90-4832-44ff-beca-d6f3e26f85c1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "9383d130-cf59-4329-b457-50629b1e6d8d",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "9a9fb653-3ec4-47e0-bbe5-80b55fa3c4b3",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4fc8ef7c-35b7-4dfc-ba77-57b929c0982c",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "test title74"
+    }, {
+      "id": "a2f41b33-2f72-42fb-8849-4765abf76df3",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "23f1b7e0-5fe3-4d3e-91af-dab627c655b4",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "5872f203-f577-4792-a0e4-63ae44900f8b",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5124db59-3ea7-4a0d-bb11-e25afdc27893",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0ae0f5c3-5c26-43dd-b446-7c7c7218aaea",
+      "comment": "",
+      "command": "click",
+      "target": "css=.bi-pencil-fill",
+      "targets": [
+        ["css=.bi-pencil-fill", "css:finder"],
+        ["xpath=//button[2]/i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc2c3cda-bf09-485c-add5-1294d16934ff",
+      "comment": "모달 나타날때까지 기다림",
+      "command": "waitForElementVisible",
+      "target": "id=exampleModalLabel",
+      "targets": [],
+      "value": "3000"
+    }, {
+      "id": "d96d69b8-c192-4f29-9c89-1766234a645f",
+      "comment": "",
+      "command": "click",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "049225fd-0e1d-4f63-a6d5-54a33d1c2a92",
+      "comment": "",
+      "command": "type",
+      "target": "id=exampleModalLabel",
+      "targets": [
+        ["id=exampleModalLabel", "id"],
+        ["css=#exampleModalLabel", "css:finder"],
+        ["xpath=//input[@id='exampleModalLabel']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input", "xpath:idRelative"],
+        ["xpath=//div/div/input", "xpath:position"]
+      ],
+      "value": "to do7 list4"
+    }, {
+      "id": "2dc930af-20f0-4f8d-8858-dc52daa2d62a",
+      "comment": "",
+      "command": "click",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "f8725118-f862-4818-9572-91709855f7d6",
+      "comment": "",
+      "command": "type",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "002024-03-11"
+    }, {
+      "id": "ff41ccd9-5eff-41f5-a63b-618811cd2c19",
+      "comment": "",
+      "command": "click",
+      "target": "id=modalSaveBtn",
+      "targets": [
+        ["id=modalSaveBtn", "id"],
+        ["css=#modalSaveBtn", "css:finder"],
+        ["xpath=//button[@id='modalSaveBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div[3]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[3]/button[2]", "xpath:position"],
+        ["xpath=//button[contains(.,'저장')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "beab073a-b6f7-4ab5-a6bd-80b9487b278f",
+      "comment": "",
+      "command": "waitForText",
+      "target": "css=.title",
+      "targets": [
+        ["css=.title", "css:finder"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'To do list')]", "xpath:innerText"]
+      ],
+      "value": "To do list"
+    }, {
+      "id": "2541c3ce-d593-457c-a68c-145cb16a2673",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "1bfae0bc-2cd4-4b26-a9a7-48e9b6ad60ec",
+      "comment": "//여기까지 전제조건",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "6262d140-cc80-42dc-9e8a-25708cff9537",
+      "comment": "",
+      "command": "click",
+      "target": "id=searchDate",
+      "targets": [
+        ["id=searchDate", "id"],
+        ["css=#searchDate", "css:finder"],
+        ["xpath=//input[@id='searchDate']", "xpath:attributes"],
+        ["xpath=//input[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9ceaf08-0e8d-4e95-819a-4a10b5d635c8",
+      "comment": "",
+      "command": "type",
+      "target": "id=searchDate",
+      "targets": [],
+      "value": "002024-03-11"
+    }, {
+      "id": "92661242-6fb4-4082-83fe-9c4be152baba",
+      "comment": "",
+      "command": "click",
+      "target": "css=.searchIcon",
+      "targets": [
+        ["css=.bi-search-heart-fill", "css:finder"],
+        ["xpath=//i", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4019be6d-4223-4b50-89d6-16c14bcf156a",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(1) > .card-body",
+      "targets": [
+        ["css=.card:nth-child(1) > .card-body", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c294790e-6739-4d4a-a0c4-22f2fe2de9d1",
+      "comment": "",
+      "command": "assertElementPresent",
+      "target": "css=.card:nth-child(2) > .card-body",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bcb43e87-cfd5-4430-9d10-a36312d08baf",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(1) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "test title74"
+    }, {
+      "id": "56e1b508-f58a-4d34-af0d-2ad160609b48",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.card:nth-child(2) span",
+      "targets": [
+        ["css=.card:nth-child(1) span", "css:finder"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div/span", "xpath:idRelative"],
+        ["xpath=//div/div/div/span", "xpath:position"],
+        ["xpath=//span[contains(.,'test title65')]", "xpath:innerText"]
+      ],
+      "value": "to do7 list4"
+    }, {
+      "id": "e6908074-72c0-4757-bbd0-36b2bfd8b087",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(1)",
+      "targets": [
+        ["css=.btn-primary:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "60cb1cdc-a544-41bb-926e-582fb288c55c",
+      "comment": "//모달 date value는 2024",
+      "command": "assertValue",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "2024-03-11"
+    }, {
+      "id": "28fed7c2-19ca-4768-a573-0293d8cceca5",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-close",
+      "targets": [
+        ["css=.btn-close", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e1a8cfe6-e086-4eb8-a90b-f613cf066633",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-primary:nth-child(2)",
+      "targets": [
+        ["css=.btn-primary:nth-child(1)", "css:finder"],
+        ["xpath=(//button[@type='button'])[7]", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "c7a19282-7df9-4bb8-a3cd-e41bf44ea931",
+      "comment": "",
+      "command": "assertValue",
+      "target": "id=addDate",
+      "targets": [
+        ["id=addDate", "id"],
+        ["css=#addDate", "css:finder"],
+        ["xpath=//input[@id='addDate']", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/input[2]", "xpath:idRelative"],
+        ["xpath=//div/div/input[2]", "xpath:position"]
+      ],
+      "value": "2024-03-11"
+    }, {
+      "id": "502834de-f51e-4bc8-8040-74eeedfe516e",
+      "comment": "",
+      "command": "click",
+      "target": "css=.btn-close",
+      "targets": [
+        ["css=.btn-close", "css:finder"],
+        ["xpath=(//button[@type='button'])[3]", "xpath:attributes"],
+        ["xpath=//div[@id='addModal']/div/div/div/button", "xpath:idRelative"],
+        ["xpath=//div/div/button", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "eb9d53e9-7460-4215-9752-b8bd91bee148",
+      "comment": "// 삭제하기",
+      "command": "echo",
+      "target": "삭제하기",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9b529f20-0305-43df-b66d-2f9d6708dc9d",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "90ad9611-669e-4dda-9bfd-64504d35f531",
+      "comment": "",
+      "command": "times",
+      "target": "2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "e1fef3e6-58d5-4525-8da2-a7318ea172e5",
+      "comment": "",
+      "command": "chooseOkOnNextConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2c4f8ab9-750d-4c12-9b1a-ebadb79987be",
+      "comment": "",
+      "command": "click",
+      "target": "name=deleteBtn",
+      "targets": [
+        ["name=deleteBtn", "name"],
+        ["css=.card:nth-child(1) .btn-danger", "css:finder"],
+        ["xpath=//button[@name='deleteBtn']", "xpath:attributes"],
+        ["xpath=//div[@id='scrollDiv']/div/div/div/div[2]/button[2]", "xpath:idRelative"],
+        ["xpath=//div[2]/button[2]", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "82190c7c-05b8-4cc9-b8f9-df81d011b846",
+      "comment": "",
+      "command": "assertConfirmation",
+      "target": "삭제하시겠습니까?",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5c0059ba-c898-464c-81d9-41b8c4202c1e",
+      "comment": "",
+      "command": "webdriverChooseOkOnVisibleConfirmation",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e10e680-fd06-4b3f-a33c-4346f9eb607f",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0c86b4e1-e326-43a7-944c-a5a08a753a63",
       "comment": "",
       "command": "assertElementNotPresent",
       "target": "css=.card-body",
