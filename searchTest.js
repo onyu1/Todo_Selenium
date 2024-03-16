@@ -222,11 +222,11 @@ describe('SearchTest', function() {
       assert(elements.length)
     }
     assert(await driver.findElement(By.css("span:nth-child(3)")).getText() == "test title")
+
     // //test ti 포함하는지 mcoah.js로 작성하여 확인
     console.log("test ti 포함하는지 mcoah.js로 작성하여 확인")
-
-
-
+    const titleText = await driver.findElement(By.css("span:nth-child(3)")).getText();
+    assert(titleText.includes("test ti"));
 
     // // 삭제하기
     await driver.navigate().refresh();
@@ -256,7 +256,8 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.findElement(By.css(".bi-pencil-fill")).click()
     // 모달 나타날때까지 기다림
     await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
@@ -265,12 +266,14 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-12")
     await driver.findElement(By.id("modalSaveBtn")).click()
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
     // //여기까지 전제조건
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
+
     await driver.findElement(By.id("searchTitle")).click()
     await driver.findElement(By.id("searchTitle")).sendKeys("test title65")
     await driver.findElement(By.css(".searchIcon")).click()
@@ -285,14 +288,19 @@ describe('SearchTest', function() {
     assert(await driver.findElement(By.css(".card:nth-child(1) span")).getText() == "test title65")
     assert(await driver.findElement(By.css(".card:nth-child(2) span")).getText() == "test title65")
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.get("http://todo.wooyu.world/")
-    const times = 2
-    for(let i = 0; i < times; i++) {
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 2
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(1000);
       await driver.findElement(By.name("deleteBtn")).click()
       assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
       await driver.switchTo().alert().accept()
     }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
@@ -307,7 +315,8 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.findElement(By.css(".bi-pencil-fill")).click()
     // 모달 나타날때까지 기다림
     await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
@@ -316,12 +325,14 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-12")
     await driver.findElement(By.id("modalSaveBtn")).click()
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
     // //여기까지 전제조건
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
+
     await driver.findElement(By.id("searchTitle")).click()
     await driver.findElement(By.id("searchTitle")).sendKeys("test ti")
     await driver.findElement(By.css(".searchIcon")).click()
@@ -335,17 +346,29 @@ describe('SearchTest', function() {
     }
     assert(await driver.findElement(By.css(".card:nth-child(1) span")).getText() == "test title66")
     assert(await driver.findElement(By.css(".card:nth-child(2) span")).getText() == "test title66")
+
     // //test ti 포함하는지 mcoah.js로 작성하여 확인
     console.log("test ti 포함하는지 mcoah.js로 작성하여 확인")
+    const titleText = await driver.findElement(By.css(".card:nth-child(1) span")).getText();
+    assert(titleText.includes("test ti"));
+    const titleText2 = await driver.findElement(By.css(".card:nth-child(2) span")).getText();
+    assert(titleText2.includes("test ti"));
+
+
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.get("http://todo.wooyu.world/")
-    const times = 2
-    for(let i = 0; i < times; i++) {
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 2
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(1000);
       await driver.findElement(By.name("deleteBtn")).click()
       assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
       await driver.switchTo().alert().accept()
     }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
@@ -360,7 +383,8 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.findElement(By.css(".bi-pencil-fill")).click()
     // 모달 나타날때까지 기다림
     await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
@@ -369,12 +393,14 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
     // //여기까지 전제조건
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
+
     await driver.findElement(By.id("searchTitle")).click()
     await driver.findElement(By.id("searchTitle")).sendKeys("test title67")
     await driver.findElement(By.css(".searchIcon")).click()
@@ -382,20 +408,26 @@ describe('SearchTest', function() {
       const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
       assert(elements.length)
     }
+    await driver.sleep(2000);
     {
-      const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
-      assert(!elements.length)
+      const elements2 = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
+      assert(!elements2.length)
     }
     assert(await driver.findElement(By.css(".card:nth-child(1) span")).getText() == "test title67")
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.get("http://todo.wooyu.world/")
-    const times = 2
-    for(let i = 0; i < times; i++) {
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 2
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(1000);
       await driver.findElement(By.name("deleteBtn")).click()
       assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
       await driver.switchTo().alert().accept()
     }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
@@ -410,7 +442,8 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.findElement(By.css(".bi-pencil-fill")).click()
     // 모달 나타날때까지 기다림
     await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
@@ -419,12 +452,14 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
     // //여기까지 전제조건
-    {
-      const elements = await driver.findElements(By.css(".card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card-body"))), 3000)
+
     await driver.findElement(By.id("searchTitle")).click()
     await driver.findElement(By.id("searchTitle")).sendKeys("test ti")
     await driver.findElement(By.css(".searchIcon")).click()
@@ -432,6 +467,7 @@ describe('SearchTest', function() {
       const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
       assert(elements.length)
     }
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
       assert(!elements.length)
@@ -439,15 +475,24 @@ describe('SearchTest', function() {
     assert(await driver.findElement(By.css(".card:nth-child(1) span")).getText() == "test title68")
     // //test ti 포함하는지 mcoah.js로 작성하여 확인
     console.log("test ti 포함하는지 mcoah.js로 작성하여 확인")
+    const titleText = await driver.findElement(By.css(".card:nth-child(1) span")).getText();
+    assert(titleText.includes("test ti"));
+
+
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.get("http://todo.wooyu.world/")
-    const times = 2
-    for(let i = 0; i < times; i++) {
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 2
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(1000);
       await driver.findElement(By.name("deleteBtn")).click()
       assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
       await driver.switchTo().alert().accept()
     }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
@@ -462,7 +507,8 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.findElement(By.css(".bi-pencil-fill")).click()
     // 모달 나타날때까지 기다림
     await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
@@ -471,16 +517,17 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
-      assert(elements.length)
-    }
+
     // //여기까지 전제조건
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(1) > .card-body"))), 3000)
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(2) > .card-body"))), 3000)
+
+
     await driver.findElement(By.id("searchTitle")).click()
     await driver.findElement(By.id("searchTitle")).sendKeys("test title69")
     await driver.findElement(By.css(".searchIcon")).click()
@@ -488,6 +535,7 @@ describe('SearchTest', function() {
       const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
       assert(elements.length)
     }
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
       assert(elements.length)
@@ -495,14 +543,19 @@ describe('SearchTest', function() {
     assert(await driver.findElement(By.css(".card:nth-child(1) span")).getText() == "test title69")
     assert(await driver.findElement(By.css(".card:nth-child(2) span")).getText() == "test title69")
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.get("http://todo.wooyu.world/")
-    const times = 2
-    for(let i = 0; i < times; i++) {
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 2
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(1000);
       await driver.findElement(By.name("deleteBtn")).click()
       assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
       await driver.switchTo().alert().accept()
     }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
@@ -517,7 +570,8 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.findElement(By.css(".bi-pencil-fill")).click()
     // 모달 나타날때까지 기다림
     await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
@@ -526,16 +580,16 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
-      assert(elements.length)
-    }
+
     // //여기까지 전제조건
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(1) > .card-body"))), 3000)
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(2) > .card-body"))), 3000)
+
     await driver.findElement(By.id("searchTitle")).click()
     await driver.findElement(By.id("searchTitle")).sendKeys("test ti")
     await driver.findElement(By.css(".searchIcon")).click()
@@ -543,6 +597,7 @@ describe('SearchTest', function() {
       const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
       assert(elements.length)
     }
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
       assert(elements.length)
@@ -551,15 +606,26 @@ describe('SearchTest', function() {
     assert(await driver.findElement(By.css(".card:nth-child(2) span")).getText() == "test title70")
     // //test ti 포함하는지 mcoah.js로 작성하여 확인
     console.log("test ti 포함하는지 mcoah.js로 작성하여 확인")
+    const titleText = await driver.findElement(By.css(".card:nth-child(1) span")).getText();
+    assert(titleText.includes("test ti"));
+    const titleText2 = await driver.findElement(By.css(".card:nth-child(2) span")).getText();
+    assert(titleText2.includes("test ti"));
+
+
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.get("http://todo.wooyu.world/")
-    const times = 2
-    for(let i = 0; i < times; i++) {
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 2
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(1000);
       await driver.findElement(By.name("deleteBtn")).click()
       assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
       await driver.switchTo().alert().accept()
     }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
@@ -574,26 +640,32 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.get("http://todo.wooyu.world/")
+
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
     // //여기까지 전제조건
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(1) > .card-body"))), 3000)
+
     await driver.findElement(By.id("searchDate")).click()
     await driver.findElement(By.id("searchDate")).sendKeys("002024-04-11")
     await driver.findElement(By.css(".searchIcon")).click()
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
     }
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.findElement(By.name("deleteBtn")).click()
     assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
     await driver.switchTo().alert().accept()
+
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
@@ -608,7 +680,9 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+
     await driver.findElement(By.css(".bi-pencil-fill")).click()
     // 모달 나타날때까지 기다림
     await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
@@ -617,34 +691,38 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-12")
     await driver.findElement(By.id("modalSaveBtn")).click()
+
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
-      assert(elements.length)
-    }
+
     // //여기까지 전제조건
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(1) > .card-body"))), 3000)
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(2) > .card-body"))), 3000)
+
     await driver.findElement(By.id("searchDate")).click()
     await driver.findElement(By.id("searchDate")).sendKeys("002024-03-11")
-    // // search date value는 002024
+    await driver.sleep(2000);
+
     {
       const value = await driver.findElement(By.id("searchDate")).getAttribute("value")
-      assert(value == "002024-03-11")
+      assert(value == "2024-03-11")// // search date value는 002024(selenium에서 002024, javascript에서 2024)
     }
     await driver.findElement(By.css(".searchIcon")).click()
     {
       const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
       assert(elements.length)
     }
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
       assert(!elements.length)
     }
     assert(await driver.findElement(By.css(".card:nth-child(1) span")).getText() == "test title72")
     await driver.findElement(By.css(".btn-primary:nth-child(1)")).click()
+    await driver.sleep(2000);
     // //모달 date value는 2024
     {
       const value = await driver.findElement(By.id("addDate")).getAttribute("value")
@@ -652,14 +730,19 @@ describe('SearchTest', function() {
     }
     await driver.findElement(By.css(".btn-close")).click()
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.get("http://todo.wooyu.world/")
-    const times = 2
-    for(let i = 0; i < times; i++) {
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 2
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(1000);
       await driver.findElement(By.name("deleteBtn")).click()
       assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
       await driver.switchTo().alert().accept()
     }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
@@ -674,7 +757,9 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+
     await driver.findElement(By.css(".bi-pencil-fill")).click()
     // 모달 나타날때까지 기다림
     await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
@@ -683,23 +768,26 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-12")
     await driver.findElement(By.id("modalSaveBtn")).click()
+
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
-      assert(elements.length)
-    }
+
     // //여기까지 전제조건
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(1) > .card-body"))), 3000)
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(2) > .card-body"))), 3000)
+
     await driver.findElement(By.id("searchDate")).click()
     await driver.findElement(By.id("searchDate")).sendKeys("002024-03-11")
     await driver.findElement(By.css(".searchIcon")).click()
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
       assert(elements.length)
     }
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
       assert(!elements.length)
@@ -707,20 +795,26 @@ describe('SearchTest', function() {
     assert(await driver.findElement(By.css(".card:nth-child(1) span")).getText() == "test title73")
     await driver.findElement(By.css(".btn-primary:nth-child(1)")).click()
     // //모달 date value는 2024
+    await driver.sleep(2000);
     {
       const value = await driver.findElement(By.id("addDate")).getAttribute("value")
       assert(value == "2024-03-11")
     }
     await driver.findElement(By.css(".btn-close")).click()
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.get("http://todo.wooyu.world/")
-    const times = 2
-    for(let i = 0; i < times; i++) {
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 2
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(1000);
       await driver.findElement(By.name("deleteBtn")).click()
       assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
       await driver.switchTo().alert().accept()
     }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
@@ -735,7 +829,9 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
-    await driver.get("http://todo.wooyu.world/")
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+
     await driver.findElement(By.css(".bi-pencil-fill")).click()
     // 모달 나타날때까지 기다림
     await driver.wait(until.elementIsVisible(await driver.findElement(By.id("exampleModalLabel"))), 3000)
@@ -744,23 +840,25 @@ describe('SearchTest', function() {
     await driver.findElement(By.id("addDate")).click()
     await driver.findElement(By.id("addDate")).sendKeys("002024-03-11")
     await driver.findElement(By.id("modalSaveBtn")).click()
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     await driver.wait(until.elementTextIs(await driver.findElement(By.css(".title")), 'To do list'), 30000)
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
-      assert(elements.length)
-    }
+
     // //여기까지 전제조건
-    {
-      const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
-      assert(elements.length)
-    }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(1) > .card-body"))), 3000)
+    await driver.wait(until.elementIsVisible(await driver.findElement(By.css(".card:nth-child(2) > .card-body"))), 3000)
+
     await driver.findElement(By.id("searchDate")).click()
     await driver.findElement(By.id("searchDate")).sendKeys("002024-03-11")
     await driver.findElement(By.css(".searchIcon")).click()
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card:nth-child(1) > .card-body"))
       assert(elements.length)
     }
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card:nth-child(2) > .card-body"))
       assert(elements.length)
@@ -768,6 +866,7 @@ describe('SearchTest', function() {
     assert(await driver.findElement(By.css(".card:nth-child(1) span")).getText() == "test title74")
     assert(await driver.findElement(By.css(".card:nth-child(2) span")).getText() == "to do7 list4")
     await driver.findElement(By.css(".btn-primary:nth-child(1)")).click()
+    await driver.sleep(2000);
     // //모달 date value는 2024
     {
       const value = await driver.findElement(By.id("addDate")).getAttribute("value")
@@ -775,24 +874,31 @@ describe('SearchTest', function() {
     }
     await driver.findElement(By.css(".btn-secondary")).click()
     await driver.findElement(By.css(".card:nth-child(2) .btn-primary")).click()
+    await driver.sleep(2000);
     {
       const value = await driver.findElement(By.id("addDate")).getAttribute("value")
       assert(value == "2024-03-11")
     }
     await driver.findElement(By.css(".btn-close")).click()
     // // 삭제하기
-    console.log("삭제하기")
-    await driver.get("http://todo.wooyu.world/")
-    const times = 2
-    for(let i = 0; i < times; i++) {
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
+    vars["check"] = await driver.executeScript("return 1")
+    const timesDelete = 2
+    for(let i = 0; i < timesDelete; i++) {
+      await driver.navigate().refresh();
+      await driver.sleep(1000);
       await driver.findElement(By.name("deleteBtn")).click()
       assert(await driver.switchTo().alert().getText() == "삭제하시겠습니까?")
       await driver.switchTo().alert().accept()
     }
+    await driver.navigate().refresh();
+    await driver.sleep(2000);
     {
       const elements = await driver.findElements(By.css(".card-body"))
       assert(!elements.length)
     }
+
   })
   it('TC00000075', async function() {
     await driver.findElement(By.css(".bi-pencil-fill")).click()
